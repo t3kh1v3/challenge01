@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import React from 'react';
 
 export const Layout = ({ children }) => {
+  console.log('🚀 ~ children:', children);
   const path = useLocation().pathname;
   console.log('🚀 ~ path:', path);
   return (
@@ -59,12 +60,12 @@ export const Layout = ({ children }) => {
       </Row>
 
       <Row style={{ minHeight: 'calc(100% - 150px)' }}>
-        <Col style={{ marginTop: '-2em' }}>
+        <Col style={{ marginTop: '-2em', marginBottom: '-2em', backgroundColor: '#4259AC', paddingTop: '2em', paddingBottom: '2em' }}>
           {children}
         </Col>
       </Row>
 
-      <Row style={{ height: '75px', backgroundColor: 'white', borderRadius: '20px 20px 0 0'  }}>
+      <Row style={{ height: '75px', backgroundColor: 'white', borderRadius: '20px 20px 0 0', zIndex: 2, position: 'relative' }}>
         <Col style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           FOOTER
         </Col>
