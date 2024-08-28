@@ -22,26 +22,26 @@ export const AppRouter = () => (
         )}
       />
 
+      <Route path='contact'
+        element={(
+          <Layout>
+            <div>CONTATO</div>
+          </Layout>
+        )}
+      />
+
       <Route path='list'
         element={(
           <Layout>
-            <div>LISTA DE CHAMADOS</div>
+            <div>LIST</div>
           </Layout>
         )}
       />
 
-      <Route path='ticket'
+      <Route path='project'
         element={(
           <Layout>
-            <div>CHAMADO</div>
-          </Layout>
-        )}
-      />
-
-      <Route path='ticket-doc'
-        element={(
-          <Layout>
-            <div>GOOGLE DOC DO CHAMADO</div>
+            <div>PROJECT</div>
           </Layout>
         )}
       />
