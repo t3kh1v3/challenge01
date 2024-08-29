@@ -42,17 +42,17 @@ export const Home = () => {
         }}
       >
         <Col xs={6} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexDirection: 'column' }}>
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'black', color: 'white', fontSize: '5em', borderRadius: '35px', width: '85%' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'black', color: 'white', fontSize: '5em', borderRadius: '35px', width: '85%', height: '45%' }}>
             EXAMPLE
           </div>
 
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'black', color: 'white', fontSize: '5em', borderRadius: '35px', width: '85%' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'black', color: 'white', fontSize: '5em', borderRadius: '35px', width: '85%', height: '45%' }}>
             EXAMPLE
           </div>
         </Col>
 
         <Col xs={6}>
-          <h1>Sobre nós</h1>
+          <h1 style={{ textAlign: 'center', color: '#D9A520', fontSize: '5em', marginBottom: '.75em' }}>Sobre nós</h1>
 
           <p>
             ontrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more
@@ -82,14 +82,14 @@ export const Home = () => {
         <Col>
           <h1 style={{ marginBottom: '1em', color: 'white', textAlign: 'center', letterSpacing: '.2em' }}>Conheça mais a respeito</h1>
 
-          <div style={{ position: 'relative' }}>
+          <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
             <div style={{ position: 'absolute', display: 'flex', justifyContent: 'center', height: '50px', width: '100%', top: '-25px' }}>
-              <span style={{ backgroundColor: '#D9A520', display: 'block', borderRadius: '15px', height: '50px', width: '75%' }} />
+              <span style={{ backgroundColor: '#D9A520', display: 'block', borderRadius: '15px', height: '50px', width: '50%' }} />
             </div>
               
             <iframe
-              width="100%"
-              height="560"
+              width="75%"
+              height="750"
               src="https://www.youtube.com/embed/ea08mJUU9Y4?si=SRrDZ3XitsQd-9Bt"
               title="YouTube video player"
               frameborder="0"
@@ -99,14 +99,14 @@ export const Home = () => {
             />
           </div>
 
-          <div style={{ position: 'relative', marginTop: '5em' }}>
+          <div style={{ position: 'relative', marginTop: '5em', display: 'flex', justifyContent: 'center' }}>
             <div style={{ position: 'absolute', display: 'flex', justifyContent: 'center', height: '50px', width: '100%', top: '-25px' }}>
-              <span style={{ backgroundColor: '#D9A520', display: 'block', borderRadius: '15px', height: '50px', width: '75%' }} />
+              <span style={{ backgroundColor: '#D9A520', display: 'block', borderRadius: '15px', height: '50px', width: '50%' }} />
             </div>
               
             <iframe
-              width="100%"
-              height="560"
+              width="75%"
+              height="750"
               src="https://www.youtube.com/embed/ea08mJUU9Y4?si=SRrDZ3XitsQd-9Bt"
               title="YouTube video player"
               frameborder="0"

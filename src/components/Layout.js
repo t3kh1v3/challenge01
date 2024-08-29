@@ -67,7 +67,17 @@ export const Layout = ({ children }) => {
 
       <Row style={{ height: '75px', backgroundColor: 'white', borderRadius: '20px 20px 0 0', zIndex: 2, position: 'relative' }}>
         <Col style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          FOOTER
+          <div>
+            <img src={require('../assets/github.jpeg')} alt='github icon' style={{ height: '30px', width: '30px', margin: '0 .5em' }} />
+          </div>
+
+          <div>
+            <img src={require('../assets/whatsapp.jpeg')} alt='whatsapp icon' style={{ height: '30px', width: '30px', margin: '0 .5em' }} />
+          </div>
+
+          <div>
+            <img src={require('../assets/linkedin.jpeg')} alt='linkedin icon' style={{ height: '30px', width: '30px', margin: '0 .5em' }} />
+          </div>
         </Col>
       </Row>
     </Container>
