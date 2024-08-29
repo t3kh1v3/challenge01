@@ -2,6 +2,7 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 import { Home } from '../pages/home/Home';
 import { Layout } from './Layout';
+import { Project } from '../pages/project/Project';
 import React from 'react';
 
 export const AppRouter = () => (
@@ -42,7 +43,7 @@ export const AppRouter = () => (
       <Route path='project'
         element={(
           <Layout>
-            <div>PROJECT</div>
+            <Project />
           </Layout>
         )}
       />
