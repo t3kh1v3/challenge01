@@ -1,11 +1,13 @@
-import { Carousel, Container, Row, Col, Card } from 'react-bootstrap';
+import './groupAndTech.css';
+
+import { Card, Carousel, Col, Container, Image, Row } from 'react-bootstrap';
+
 import React from 'react';
 
 export const GroupAndTech = () => {
   return (
-    <Container fluid style={{ padding: '5em 2em', backgroundColor: '#ffffff' }}>
+    <Container fluid style={{ padding: '5em 2em', backgroundColor: 'transparent' }}>
       <section>
-        {/* Seção "The Future is Now" */}
       <Row style={{ paddingBottom: '5em' }} >
         <div>
           <Col xs={12}>
@@ -18,7 +20,7 @@ export const GroupAndTech = () => {
       </section>
 
       <section>
-      {/* Seção "Conheça nosso time" */}
+
       <div style={{ backgroundColor: '#D9D9D9', padding: '2em', borderRadius: '15px', marginBottom: '3em' }}>
         <Row style={{ paddingBottom: '3em', textAlign: 'center' }}>
           <Col xs={12}>
@@ -27,58 +29,59 @@ export const GroupAndTech = () => {
             </h2>
           </Col>
           <Col xs={12}>
-            <Carousel>
+            <Carousel variant='dark'>
               <Carousel.Item>
-                <Row>
+                <Row className='justify-content-center'>
                   <Col xs={4}>
-                    <Card>
-                      <Card.Img variant="top" src="path_to_image_1" />
+                    <Card className='group-card-body'>
+                      <Card.Img variant="top" src={require('../../assets/david.jpg')} />
                       <Card.Body>
-                        <Card.Title>Nome 1</Card.Title>
+                        <Card.Title>David Moura</Card.Title>
+                        <Card.Subtitle>Desenvolvimento Site</Card.Subtitle>
                       </Card.Body>
                     </Card>
                   </Col>
                   <Col xs={4}>
-                    <Card>
-                      <Card.Img variant="top" src="path_to_image_2" />
+                    <Card className='group-card-body'>
+                      <Card.Img variant="top" src={require('../../assets/kaique.jpeg')} />
                       <Card.Body>
-                        <Card.Title>Nome 2</Card.Title>
-                      </Card.Body>
-                    </Card>
-                  </Col>
-                  <Col xs={4}>
-                    <Card>
-                      <Card.Img variant="top" src="path_to_image_3" />
-                      <Card.Body>
-                        <Card.Title>Nome 3</Card.Title>
+                        <Card.Title>Kaique Bonini</Card.Title>
+                        <Card.Subtitle>Desenvolvimento Site</Card.Subtitle>
                       </Card.Body>
                     </Card>
                   </Col>
                 </Row>
               </Carousel.Item>
               <Carousel.Item>
-                <Row>
+                <Row className='justify-content-center'>
                   <Col xs={4}>
-                    <Card>
-                      <Card.Img variant="top" src="path_to_image_4" />
+                    <Card className='group-card-body'>
+                      <Card.Img variant="top" src={require('../../assets/pedro.jpeg')} />
                       <Card.Body>
-                        <Card.Title>Nome 4</Card.Title>
+                        <Card.Title>Pedro</Card.Title>
+                        <Card.Subtitle>Desenvolvimento Site</Card.Subtitle>
                       </Card.Body>
                     </Card>
                   </Col>
                   <Col xs={4}>
-                    <Card>
-                      <Card.Img variant="top" src="path_to_image_5" />
+                    <Card className='group-card-body'>
+                      <Card.Img variant="top" src={require('../../assets/lucas.jpeg')} />
                       <Card.Body>
-                        <Card.Title>Nome 5</Card.Title>
+                        <Card.Title>Lucas</Card.Title>
+                        <Card.Subtitle>Vídeo Pitch</Card.Subtitle>
                       </Card.Body>
                     </Card>
                   </Col>
+                </Row>
+              </Carousel.Item>
+              <Carousel.Item>
+                <Row className='justify-content-center'>
                   <Col xs={4}>
-                    <Card>
-                      <Card.Img variant="top" src="path_to_image_1" />
+                    <Card className='group-card-body'>
+                      <Card.Img variant="top" src={require('../../assets/luka.jpeg')} />
                       <Card.Body>
-                        <Card.Title>Nome 1</Card.Title>
+                        <Card.Title>Luka</Card.Title>
+                        <Card.Subtitle>Desenvolvimento Site</Card.Subtitle>
                       </Card.Body>
                     </Card>
                   </Col>
@@ -94,7 +97,7 @@ export const GroupAndTech = () => {
         <Row style={{ paddingBottom: '3em', textAlign: 'center' }}>
           <Col xs={12}>
             <h2 style={{ color: '#D9A520', fontWeight: 'bold', fontSize: '2.5em' }}>
-              Nossa História
+              Sobre o projeto
             </h2>
           </Col>
           <Col xs={12}>
@@ -115,7 +118,27 @@ export const GroupAndTech = () => {
           </Col>
           <Col xs={12}>
             <div style={{ backgroundColor: '#F0F0F0', padding: '2em', borderRadius: '15px' }}>
-              {/* Lista de tecnologias utilizadas */}
+              <Row>
+                <Col xs={3}>
+                  <Image src={require('../../assets/react.png')} width={50} height={50} />
+                  <p>Foi utilizado React para poder organizar um layour reutilizável.</p>
+                </Col>
+
+                <Col xs={3}>
+                  <Image src={require('../../assets/react-bootstrap.png')} width={50} height={50} />
+                  <p>React-bootstrap foi utilizado para tirar proveito de componentes html estilizados e agilizar o desenvolvimento.</p>
+                </Col>
+
+                <Col xs={3}>
+                  <Image src={require('../../assets/react-router.png')} width={50} height={50} />
+                  <p>React router possibilitou criar as diferentes rotas para cada página tirando proveito de um redirecionamento simplificado e rápido.</p>
+                </Col>
+
+                <Col xs={3}>
+                  <Image src={require('../../assets/javascript.png')} width={50} height={50} />
+                  <p>Javascript foi utilizado para montar a lógica do projeto.</p>
+                </Col>
+              </Row>
             </div>
           </Col>
         </Row>

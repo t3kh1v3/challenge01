@@ -1,0 +1,10 @@
+.home-button-icon:hover {
+  opacity: .5;
+}
+
+.home-button-icon {
+  border-radius: 10px;
+  left: 2em;
+  top: .75em;
+  position: absolute;
+}

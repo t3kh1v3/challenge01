@@ -1,15 +1,17 @@
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import './home.css'
+
+import { Button, Col, Container, Image, Row } from 'react-bootstrap';
 
 import { Link } from 'react-router-dom';
 import React from 'react';
 
 export const Home = () => {
   return (
-    <Container fluid style={{ padding: '5em 2em'}}>
-      <Row style={{ paddingBottom: '5em' }} >
+    <Container fluid className='home-container'>
+      <Row className='home-header-row'>
         <Col xs={6}>
           <h1 style={{ color: 'white', fontWeight: 'bold', fontSize: '4em', marginBottom: 0 }}>
-            TechHiver
+            TechHive
           </h1>
 
           <div style={{ color: '#D9A520', fontSize: '1.5em' }}>Corporation</div>
@@ -22,10 +24,8 @@ export const Home = () => {
             </Button>
           </Link>
         </Col>
-        <Col xs={6} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'black', color: 'white', fontSize: '5em', borderRadius: '35px' }}>
-          <div style={{}}>
-            EXAMPLE
-          </div>
+        <Col xs={6}>
+          <Image style={{ borderRadius: '35px' }} src={require('../../assets/home-image.jpeg')} />
         </Col>
       </Row>
 
@@ -46,7 +46,7 @@ export const Home = () => {
 
           <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
             <div style={{ position: 'absolute', display: 'flex', justifyContent: 'center', height: '50px', width: '100%', top: '-25px' }}>
-              <span style={{ backgroundColor: '#D9A520', display: 'block', borderRadius: '15px', height: '50px', width: '50%' }} />
+              <span className='home-video-pitch-label'>Vídeo Pitch I</span>
             </div>
               
             <iframe
@@ -63,7 +63,7 @@ export const Home = () => {
 
           <div style={{ position: 'relative', marginTop: '5em', display: 'flex', justifyContent: 'center' }}>
             <div style={{ position: 'absolute', display: 'flex', justifyContent: 'center', height: '50px', width: '100%', top: '-25px' }}>
-              <span style={{ backgroundColor: '#D9A520', display: 'block', borderRadius: '15px', height: '50px', width: '50%' }} />
+            <span className='home-video-pitch-label'>Vídeo Pitch II</span>
             </div>
               
             <iframe

@@ -1,0 +1,8 @@
+.group-card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.group-card-body img {
+  max-height: 30em;
+}
