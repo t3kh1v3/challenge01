@@ -1,5 +1,6 @@
-import React, { useState, useCallback } from 'react';
-import { Button, Col, Container, Row, Table, Form } from 'react-bootstrap';
+import { Button, Col, Container, Form, Row, Table } from 'react-bootstrap';
+import React, { useCallback, useState } from 'react';
+
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
 
@@ -81,24 +82,6 @@ export const List = () => {
 
     return (
         <Container fluid style={{ padding: '5em 2em' }}>
-            <Row style={{ paddingBottom: '5em' }}>
-                <Col xs={6}>
-                    <h1 style={{ color: 'white', fontWeight: 'bold', fontSize: '4em', marginBottom: 0 }}>
-                        TechHiver
-                    </h1>
-                    <div style={{ color: '#D9A520', fontSize: '1.5em' }}>Corporation</div>
-                    <p style={{ marginTop: 0, marginBottom: '3em', fontSize: '1.5em' }}>Uma nova maneira de revolucionar o seu negócio.</p>
-                    <Link to='/project'>
-                        <Button variant='warning' style={{ padding: '.5em 2em', borderRadius: '25px', color: 'white', fontSize: '1.5em' }}>
-                            Saiba mais
-                        </Button>
-                    </Link>
-                </Col>
-                <Col xs={6} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'black', color: 'white', fontSize: '5em', borderRadius: '35px' }}>
-                    <div>EXAMPLE</div>
-                </Col>
-            </Row>
-
             <Row
                 style={{
                     backgroundColor: 'white',
@@ -166,19 +149,6 @@ export const List = () => {
                     </Table>
                 </Col>
             </Row>
-
-            <Row
-                style={{
-                    backgroundColor: 'black',
-                    paddingTop: '5em',
-                    paddingBottom: '5em',
-                    marginLeft: '-2.75em',
-                    marginRight: '-2.75em',
-                    paddingLeft: '2em',
-                    paddingRight: '2em',
-                    marginBottom: '-2em',
-                }}
-            />
 
             {/* Caixa Flutuante de Chatbot */}
             <div style={{

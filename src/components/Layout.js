@@ -35,7 +35,7 @@ export const Layout = ({ children }) => {
         <Col xs='8' style={{ display: 'flex', justifyContent: 'end', alignItems: 'center' }}>
           <Link to='/group'>
             <Button active={path === '/group'} variant='outline-secondary' style={{ marginLeft: '.5em', marginRight: '.5em', color: 'white' }}>
-              Grupo
+              Sobre o Projeto
             </Button>
           </Link>
 
