@@ -1,15 +1,17 @@
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import './home.css'
+
+import { Button, Col, Container, Image, Row } from 'react-bootstrap';
 
 import { Link } from 'react-router-dom';
 import React from 'react';
 
 export const Home = () => {
   return (
-    <Container fluid style={{ padding: '5em 2em'}}>
-      <Row style={{ paddingBottom: '5em' }} >
+    <Container fluid className='home-container'>
+      <Row className='home-header-row'>
         <Col xs={6}>
           <h1 style={{ color: 'white', fontWeight: 'bold', fontSize: '4em', marginBottom: 0 }}>
-            TechHiver
+            TechHive
           </h1>
 
           <div style={{ color: '#D9A520', fontSize: '1.5em' }}>Corporation</div>
@@ -22,48 +24,8 @@ export const Home = () => {
             </Button>
           </Link>
         </Col>
-        <Col xs={6} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'black', color: 'white', fontSize: '5em', borderRadius: '35px' }}>
-          <div style={{}}>
-            EXAMPLE
-          </div>
-        </Col>
-      </Row>
-
-      <Row
-        style={{
-          backgroundColor: 'white',
-          paddingTop: '5em',
-          paddingBottom: '5em',
-          marginLeft: '-2.75em',
-          marginRight: '-2.75em',
-          paddingLeft: '2em',
-          paddingRight: '2em',
-          marginBottom: '-2em',
-        }}
-      >
-        <Col xs={6} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexDirection: 'column' }}>
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'black', color: 'white', fontSize: '5em', borderRadius: '35px', width: '85%', height: '45%' }}>
-            EXAMPLE
-          </div>
-
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'black', color: 'white', fontSize: '5em', borderRadius: '35px', width: '85%', height: '45%' }}>
-            EXAMPLE
-          </div>
-        </Col>
-
         <Col xs={6}>
-          <h1 style={{ textAlign: 'center', color: '#D9A520', fontSize: '5em', marginBottom: '.75em' }}>Sobre nós</h1>
-
-          <p>
-            ontrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more
-          </p>
-          <p>
-            obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et 
-          </p>
-
-          <p>
-            Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum 
-          </p>
+          <Image style={{ borderRadius: '35px' }} src={require('../../assets/home-image.jpeg')} />
         </Col>
       </Row>
 
@@ -84,7 +46,7 @@ export const Home = () => {
 
           <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
             <div style={{ position: 'absolute', display: 'flex', justifyContent: 'center', height: '50px', width: '100%', top: '-25px' }}>
-              <span style={{ backgroundColor: '#D9A520', display: 'block', borderRadius: '15px', height: '50px', width: '50%' }} />
+              <span className='home-video-pitch-label'>Vídeo Pitch I</span>
             </div>
               
             <iframe
@@ -101,7 +63,7 @@ export const Home = () => {
 
           <div style={{ position: 'relative', marginTop: '5em', display: 'flex', justifyContent: 'center' }}>
             <div style={{ position: 'absolute', display: 'flex', justifyContent: 'center', height: '50px', width: '100%', top: '-25px' }}>
-              <span style={{ backgroundColor: '#D9A520', display: 'block', borderRadius: '15px', height: '50px', width: '50%' }} />
+            <span className='home-video-pitch-label'>Vídeo Pitch II</span>
             </div>
               
             <iframe
