@@ -4,9 +4,12 @@ import { Link } from 'react-router-dom';
 
 export const List = () => {
     const [chamados, setChamados] = useState([
-        { id: 1, osId: 'OS1234', cliente: 'Empresa ABC', data: '28/08/2024', status: 'Em andamento', descricao: 'Problema no servidor' },
-        { id: 2, osId: 'OS1235', cliente: 'Empresa XYZ', data: '27/08/2024', status: 'Concluído', descricao: 'Atualização de software' },
-        { id: 3, osId: 'OS1236', cliente: 'Empresa 123', data: '26/08/2024', status: 'Pendente', descricao: 'Instalação de novo equipamento' },
+        { id: 1, osId: 'INC0208388', cliente: 'Fábrica 01', data: '02/05/2024', status: 'Pendente', descricao: 'Sistema não abre' },
+        { id: 2, osId: 'TASK0948363', cliente: 'Escritório Central', data: '01/05/2024', status: 'Concluído', descricao: 'Revogação de Acesso' },
+        { id: 3, osId: 'TASK0944775', cliente: 'Fábrica 01', data: '22/04/2024', status: 'Em andamento', descricao: 'Emprestimo de Equipamento' },
+        { id: 4, osId: 'INC0204817', cliente: 'Escritório Central', data: '16/04/2024', status: 'Concluído', descricao: 'Lentidão no Sistema' },
+        { id: 5, osId: 'TASK0939623', cliente: 'Centro de Distribuição', data: '15/04/2024', status: 'Pendente', descricao: 'Solicitação novo ponto de rede' },
+
     ]);
 
     const [searchTerm, setSearchTerm] = useState('');
@@ -83,7 +86,7 @@ export const List = () => {
                         <tr>
                             <th>#</th>
                             <th>ID do Chamado</th>
-                            <th>Cliente</th>
+                            <th>Local</th>
                             <th>Data de Abertura</th>
                             <th>Status</th>
                             <th>Descrição</th>
@@ -189,7 +192,7 @@ export const List = () => {
                         }}
                         onClick={toggleChatbot}
                     >
-                        Chatbot
+                        🤖 SAM
                     </div>
                 )}
 
@@ -216,7 +219,7 @@ export const List = () => {
                             transition: 'transform 0.3s ease',
                         }}
                     >
-                        🐝
+                        🤖
                     </div>
                 )}
             </div>
