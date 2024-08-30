@@ -97,12 +97,29 @@ export const GroupAndTech = () => {
         <Row style={{ paddingBottom: '3em', textAlign: 'center' }}>
           <Col xs={12}>
             <h2 style={{ color: '#D9A520', fontWeight: 'bold', fontSize: '2.5em' }}>
-              Sobre o projeto
+              Sobre o projeto - A Revolução do Suporte Técnico com o SAM
             </h2>
           </Col>
           <Col xs={12}>
             <div style={{ backgroundColor: '#F0F0F0', padding: '2em', borderRadius: '15px' }}>
-              {/* Conteúdo da história aqui */}
+              <p>
+                A introdução do SAM representa um marco revolucionário no campo do suporte técnico, apresentando uma abordagem inovadora e altamente eficaz para a resolução de problemas.
+                Ao utilizar aprendizado de máquina para analisar interações anteriores e organizar uma extensa base de conhecimento, o SAM se estabelece como uma ferramenta indispensável,
+                beneficiando tanto empresas quanto usuários individuais em busca de assistência técnica de excelência.
+              </p>
+              <p>
+                Um dos diferenciais mais notáveis do SAM é sua capacidade de interação por voz, que facilita significativamente a colaboração entre os membros da equipe de suporte.
+                Esta funcionalidade não apenas agiliza a comunicação, mas também possibilita a resolução de problemas em tempo real, resultando em um aumento substancial no desempenho e na eficiência da equipe como um todo.
+              </p>
+              <p>
+                Olhando para o horizonte, a integração de tecnologias de inteligência artificial, como as empregadas no SAM, promete uma evolução contínua no setor de suporte técnico. Esta inovação oferece perspectivas de uma
+                assistência cada vez mais inteligente, adaptativa e eficiente, preparada para atender às demandas crescentes e diversificadas de clientes e empresas em um cenário tecnológico em constante transformação.
+              </p>
+
+              <p>
+                Em suma, o SAM não apenas aprimora a qualidade do suporte técnico atual, mas também pavimenta o caminho para um futuro onde a assistência técnica será mais rápida, precisa e personalizada,
+                adaptando-se continuamente às necessidades de um mundo digital em rápida evolução.
+              </p>
             </div>
           </Col>
         </Row>
