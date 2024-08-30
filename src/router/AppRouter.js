@@ -3,6 +3,7 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { GroupAndTech } from '../pages/groupAndTech/GroupAndTech';
 import { Home } from '../pages/home/Home';
 import { Layout } from '../components/Layout';
+import {List} from "../pages/list/List";
 import { Project } from '../pages/project/Project';
 import React from 'react';
 
@@ -36,7 +37,7 @@ export const AppRouter = () => (
       <Route path='list'
         element={(
           <Layout>
-            <div>LIST</div>
+            <List/>
           </Layout>
         )}
       />
