@@ -1,7 +1,6 @@
 import React, { useState, useCallback } from 'react';
-import { Button, Col, Container, Row, Table, Form } from 'react-bootstrap';
+import { Button, Col, Container, Row, Table, Form, Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import _ from 'lodash';
 
 export const List = () => {
     const [chamados, setChamados] = useState([
@@ -11,13 +10,11 @@ export const List = () => {
     ]);
 
     const [searchTerm, setSearchTerm] = useState('');
-    const [selectedChamados, setSelectedChamados] = useState([]);
     const [chatbotExpanded, setChatbotExpanded] = useState(false);
 
-    const handleSearch = useCallback(
-        _.debounce((term) => setSearchTerm(term), 300),
-        []
-    );
+    const handleSearch = useCallback((term) => {
+        setSearchTerm(term);
+    }, []);
 
     const filteredChamados = chamados.filter(chamado =>
         chamado.osId.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -25,27 +22,10 @@ export const List = () => {
         chamado.descricao.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    const handleCycleStatus = (id) => {
-        const updatedChamados = chamados.map(chamado => {
-            if (chamado.id === id) {
-                let newStatus;
-                switch (chamado.status) {
-                    case 'Em andamento':
-                        newStatus = 'Pendente';
-                        break;
-                    case 'Pendente':
-                        newStatus = 'Concluído';
-                        break;
-                    case 'Concluído':
-                        newStatus = 'Em andamento';
-                        break;
-                    default:
-                        newStatus = 'Em andamento';
-                }
-                return { ...chamado, status: newStatus };
-            }
-            return chamado;
-        });
+    const handleUpdateStatus = (id, newStatus) => {
+        const updatedChamados = chamados.map(chamado =>
+            chamado.id === id ? { ...chamado, status: newStatus } : chamado
+        );
         setChamados(updatedChamados);
     };
 
@@ -54,11 +34,16 @@ export const List = () => {
         setChamados(updatedChamados);
     };
 
-    const handleSelect = (id) => {
-        if (selectedChamados.includes(id)) {
-            setSelectedChamados(selectedChamados.filter(chamadoId => chamadoId !== id));
-        } else {
-            setSelectedChamados([...selectedChamados, id]);
+    const getStatusStyle = (status) => {
+        switch (status) {
+            case 'Concluído':
+                return { backgroundColor: 'green', color: 'white' };
+            case 'Em andamento':
+                return { backgroundColor: '#0072b1', color: 'black' };
+            case 'Pendente':
+                return { backgroundColor: 'orange', color: 'black' };
+            default:
+                return {};
         }
     };
 
@@ -66,38 +51,8 @@ export const List = () => {
         setChatbotExpanded(!chatbotExpanded);
     };
 
-    const getStatusStyle = (status) => {
-        switch (status) {
-            case 'Concluído':
-                return { backgroundColor: 'green', color: 'white' };
-            case 'Em andamento':
-                return { backgroundColor: 'yellow', color: 'black' };
-            case 'Pendente':
-                return { backgroundColor: 'red', color: 'white' };
-            default:
-                return {};
-        }
-    };
-
     return (
         <Container fluid style={{ padding: '5em 2em' }}>
-            <Row style={{ paddingBottom: '5em' }}>
-                <Col xs={6}>
-                    <h1 style={{ color: 'white', fontWeight: 'bold', fontSize: '4em', marginBottom: 0 }}>
-                        TechHiver
-                    </h1>
-                    <div style={{ color: '#D9A520', fontSize: '1.5em' }}>Corporation</div>
-                    <p style={{ marginTop: 0, marginBottom: '3em', fontSize: '1.5em' }}>Uma nova maneira de revolucionar o seu negócio.</p>
-                    <Link to='/project'>
-                        <Button variant='warning' style={{ padding: '.5em 2em', borderRadius: '25px', color: 'white', fontSize: '1.5em' }}>
-                            Saiba mais
-                        </Button>
-                    </Link>
-                </Col>
-                <Col xs={6} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'black', color: 'white', fontSize: '5em', borderRadius: '35px' }}>
-                    <div>EXAMPLE</div>
-                </Col>
-            </Row>
 
             <Row
                 style={{
@@ -133,7 +88,6 @@ export const List = () => {
                             <th>Status</th>
                             <th>Descrição</th>
                             <th>Ações</th>
-                            <th>Selecionar</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -146,19 +100,48 @@ export const List = () => {
                                 <td style={getStatusStyle(chamado.status)}>{chamado.status}</td>
                                 <td>{chamado.descricao}</td>
                                 <td>
-                                    <Button variant="info" onClick={() => handleCycleStatus(chamado.id)} style={{ marginRight: '5px' }}>
-                                        Alterar Status
-                                    </Button>
-                                    <Button variant="danger" onClick={() => handleRemoveChamado(chamado.id)}>
-                                        Remover
-                                    </Button>
-                                </td>
-                                <td>
-                                    <Form.Check
-                                        type="checkbox"
-                                        checked={selectedChamados.includes(chamado.id)}
-                                        onChange={() => handleSelect(chamado.id)}
-                                    />
+                                    <Dropdown>
+                                        <Dropdown.Toggle
+                                            variant="primary"
+                                            style={{
+                                                backgroundColor: '#007bff', // Cor do botão
+                                                borderColor: '#007bff', // Cor da borda do botão
+                                            }}
+                                        >
+                                            Ações
+                                        </Dropdown.Toggle>
+                                        <Dropdown.Menu>
+                                            <Dropdown.Item
+                                                onClick={() => handleUpdateStatus(chamado.id, 'Em andamento')}
+                                                style={{ color: '#0072b1' }} // Cor do texto
+                                            >
+                                                Em andamento
+                                            </Dropdown.Item>
+                                            <Dropdown.Item
+                                                onClick={() => handleUpdateStatus(chamado.id, 'Pendente')}
+                                                style={{ color: 'orange' }} // Cor do texto
+                                            >
+                                                Pendente
+                                            </Dropdown.Item>
+                                            <Dropdown.Item
+                                                onClick={() => handleUpdateStatus(chamado.id, 'Concluído')}
+                                                style={{ color: 'green' }} // Cor do texto
+                                            >
+                                                Concluído
+                                            </Dropdown.Item>
+                                            <Dropdown.Item
+                                                onClick={() => {
+                                                    const confirmRemoval = window.confirm('Tem certeza de que deseja remover este chamado?');
+                                                    if (confirmRemoval) {
+                                                        handleRemoveChamado(chamado.id);
+                                                    }
+                                                }}
+                                                style={{ color: '#dc3545' }} // Cor do texto
+                                            >
+                                                Remover
+                                            </Dropdown.Item>
+                                        </Dropdown.Menu>
+                                    </Dropdown>
                                 </td>
                             </tr>
                         ))}
@@ -166,19 +149,6 @@ export const List = () => {
                     </Table>
                 </Col>
             </Row>
-
-            <Row
-                style={{
-                    backgroundColor: 'black',
-                    paddingTop: '5em',
-                    paddingBottom: '5em',
-                    marginLeft: '-2.75em',
-                    marginRight: '-2.75em',
-                    paddingLeft: '2em',
-                    paddingRight: '2em',
-                    marginBottom: '-2em',
-                }}
-            />
 
             {/* Caixa Flutuante de Chatbot */}
             <div style={{
@@ -190,19 +160,24 @@ export const List = () => {
                 backgroundColor: chatbotExpanded ? 'white' : '#D9A520',
                 border: chatbotExpanded ? '1px solid #D9A520' : 'none',
                 borderRadius: '10px',
-                boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: chatbotExpanded ? 'space-between' : 'center',
                 alignItems: 'center',
                 cursor: 'pointer',
                 zIndex: 1000,
+                transition: 'transform 0.3s ease',
+                overflow: 'hidden',
+                transform: 'scale(1)', // Inicialmente sem escala
+                boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)', // Sombra no ícone
             }}
-                 onClick={toggleChatbot}
+                 onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'} // Aumenta ao passar o mouse
+                 onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} // Retorna ao tamanho original
             >
-                {chatbotExpanded ? (
-                    <>
-                        <div style={{
+                {/* Nome do Chatbot */}
+                {chatbotExpanded && (
+                    <div
+                        style={{
                             backgroundColor: '#D9A520',
                             padding: '10px',
                             borderRadius: '8px 8px 0 0',
@@ -210,23 +185,42 @@ export const List = () => {
                             textAlign: 'center',
                             fontWeight: 'bold',
                             width: '100%',
-                        }}>
-                            Chatbot
-                        </div>
+                            cursor: 'pointer',
+                        }}
+                        onClick={toggleChatbot}
+                    >
+                        Chatbot
+                    </div>
+                )}
+
+                {/* Conteúdo do Chatbot */}
+                {chatbotExpanded ? (
+                    <>
                         <div style={{
                             flex: 1,
                             overflowY: 'auto',
                             padding: '10px',
                             width: '100%',
+                            boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)', // Sombra no ícone
                         }}>
                             <p>Olá! Como posso ajudar você hoje?</p>
                         </div>
                         <Form.Control type="text" placeholder="Digite sua mensagem..." />
                     </>
                 ) : (
-                    <div style={{ color: 'white', fontSize: '2em' }}>💬</div>
+                    <div
+                        onClick={toggleChatbot}
+                        style={{
+                            color: 'white',
+                            fontSize: '2em',
+                            transition: 'transform 0.3s ease',
+                        }}
+                    >
+                        🐝
+                    </div>
                 )}
             </div>
+
         </Container>
     );
 };
