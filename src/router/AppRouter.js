@@ -1,7 +1,8 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
+import { GroupAndTech } from '../pages/groupAndTech/GroupAndTech';
 import { Home } from '../pages/home/Home';
-import { Layout } from './Layout';
+import { Layout } from '../components/Layout';
 import { Project } from '../pages/project/Project';
 import React from 'react';
 
@@ -19,7 +20,7 @@ export const AppRouter = () => (
       <Route path='group'
         element={(
           <Layout>
-            <div>GROUP & TECH</div>
+            <GroupAndTech />
           </Layout>
         )}
       />
