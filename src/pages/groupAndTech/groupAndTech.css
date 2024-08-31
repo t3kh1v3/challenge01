@@ -1,8 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 .group-card-body {
   display: flex;
   flex-direction: column;
+  align-items: center; 
+  justify-content: flex-start; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  overflow: hidden;
+  padding-top: 1em; 
+  margin: 70px 30px 70px 30px;
 }
 
 .group-card-body img {
-  max-height: 30em;
+  max-height: 15em;
+  max-width: 15em;
+  margin-top: 3em;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 1em; 
+  border-radius: 50%; 
+}
+
+.group-card-body-title {
+  font-size: 33px;
+  margin-bottom: 20px;
+}
+
+.group-card-body-subtitle {
+  font-size: 17px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+
+.carousel-indicators [data-bs-target] {
+  background-color: #000;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.carousel-indicators .active {
+  background-color: #007bff;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #000;
+  width: 50px;
+  height: 50px;
+  padding: 1em;
+  border-radius: 50%;
+}
+
+.carousel-control-prev, .carousel-control-next {
+  position: absolute;
+  top: auto;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  border-radius: 50%;
+}
+
+.carousel-control-prev {
+  left: calc(50% - 75px); /* Ajuste a posição para a esquerda */
+}
+
+.carousel-control-next {
+  right: calc(50% - 75px); /* Ajuste a posição para a direita */
+}
+
+.carousel-indicators {
+  margin-top: 20px; /* Ajuste a posição dos indicadores */
+}
+
+.paragraf {
+  font-size: 20px;
+}
+
+.home-header-row-button {
+  margin-top: 1em;
+  margin-right: 5.7em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

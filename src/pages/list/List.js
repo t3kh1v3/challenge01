@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { Button, Col, Container, Row, Table, Form, Dropdown } from 'react-bootstrap';
+import { Button, Col, Container, Row, Table, Form, Dropdown, Collapse, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export const List = () => {
@@ -14,6 +14,8 @@ export const List = () => {
 
     const [searchTerm, setSearchTerm] = useState('');
     const [chatbotExpanded, setChatbotExpanded] = useState(false);
+    const [open, setOpen] = useState(false);
+
 
     const handleSearch = useCallback((term) => {
         setSearchTerm(term);
@@ -55,18 +57,32 @@ export const List = () => {
     };
 
     return (
-        <Container fluid style={{ padding: '5em 2em' }}>
-
+        <Container fluid style={{ padding: '5em 7em' }}>
+            <Button
+                onClick={() => setOpen(!open)}
+                aria-controls="example-collapse-text"
+                aria-expanded={open}
+                style={{ marginBottom: '0em' }}>Como o Sistema Funciona</Button>
+            <Collapse in={open}>
+                <div id="example-collapse-text">
+                    <Card body>
+                    O SAM (Softtek AI Manager) representa uma inovação no suporte técnico, oferecendo uma abordagem moderna e eficiente para a resolução de problemas técnicos. 
+                    Aqui está uma visão geral de como o sistema funciona e como ele pode beneficiar empresas e usuários. A tabela abaixo contém o banco de dados que simulamos para armazenar e manipular os chamados que são abertos pelos atendentes. A IA utiliza esse Banco de Dados, utilizando um modelo generativo, para gerar os insights e auxiliar os atendentes, utilizando como base casos anteriores e encontrando a melhor solução para resolver o problema.                     
+                    </Card>
+                </div>
+            </Collapse>
             <Row
                 style={{
                     backgroundColor: 'white',
                     paddingTop: '5em',
                     paddingBottom: '5em',
+                    marginTop: '1.5em',
                     marginLeft: '-2.75em',
                     marginRight: '-2.75em',
                     paddingLeft: '2em',
                     paddingRight: '2em',
                     marginBottom: '-2em',
+                    borderRadius: '30px'
                 }}
             >
                 <Col xs={12}>
@@ -158,11 +174,11 @@ export const List = () => {
                 position: 'fixed',
                 bottom: '20px',
                 right: '20px',
-                width: chatbotExpanded ? '300px' : '50px',
-                height: chatbotExpanded ? '400px' : '50px',
+                width: chatbotExpanded ? '300px' : '70px',
+                height: chatbotExpanded ? '400px' : '70px',
                 backgroundColor: chatbotExpanded ? 'white' : '#D9A520',
                 border: chatbotExpanded ? '1px solid #D9A520' : 'none',
-                borderRadius: '10px',
+                borderRadius: '20px',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: chatbotExpanded ? 'space-between' : 'center',
@@ -225,5 +241,6 @@ export const List = () => {
             </div>
 
         </Container>
+        
     );
 };

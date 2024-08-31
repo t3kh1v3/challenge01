@@ -1,10 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 .home-container {
-  padding: 5em 2em;
+  padding: 8em 2em;
+  background-image: '../../assets/Home.jpg';
+  font-family: 'Inter', sans-serif;
 }
 
 .home-header-row {
-  padding-bottom: 5em;
+  padding-bottom: 6em;
+  margin-bottom: 3em;
 }
+
+.home-header-row-button {
+  padding: .5em 2em;
+  border-radius: 25px;
+  color: black; 
+  font-size: 1.5em; 
+  font-weight: bold;
+  margin-left: 6em; 
+  background: linear-gradient(90deg, #FF914D, #FFDE59);
+  transition: all 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.home-header-row-button:hover {
+  transform: scale(1.1); /* Aumenta o botão */
+  background: linear-gradient(90deg, #FF7A00, #FFC800); /* Escurece o fundo */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra para dar efeito de profundidade */
+}
+
 
 .home-video-pitch-label {
   background-color: #D9A520;

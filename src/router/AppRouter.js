@@ -5,6 +5,7 @@ import { Home } from '../pages/home/Home';
 import { Layout } from '../components/Layout';
 import {List} from "../pages/list/List";
 import { Project } from '../pages/project/Project';
+import { Contact } from '../pages/contact/Contact';
 import React from 'react';
 
 export const AppRouter = () => (
@@ -29,7 +30,7 @@ export const AppRouter = () => (
       <Route path='contact'
         element={(
           <Layout>
-            <div>CONTATO</div>
+            <Contact />
           </Layout>
         )}
       />
